@@ -16,39 +16,29 @@ def main():
     balance = time
     day_left, hour_left, min_left, sec_left= 0, 0, 0, 0
 
-    day_left = (balance >= 84000) * balance // 84000 and balance // day_left
+    day_left = balance // 86400
+    balance %= 86400
 
-    print(day_left)
+    hour_left = balance // 3600
+    balance %= 3600
+
+    min_left = balance // 60
+    balance %= 60
+
+    sec_left = balance
+
+    day_left_chk = str(day_left) + " day"
+    day_left_hour = day_left_chk + (day_left > 1) * "s"
+
+    hour_left_chk = str(hour_left) + " hour"
+    hour_left_hour = hour_left_chk + (hour_left > 1) * "s"
+
+    min_left_chk = str(min_left) + " minute"
+    min_left_hour = min_left_chk + (min_left > 1) * "s"
+
+    sec_left_chk = str(sec_left) + " second"
+    sec_left_hour = sec_left_chk + (sec_left > 1) * "s"
+
+    print(day_left_hour, hour_left_hour, min_left_hour, sec_left_hour + ".")
 
 main()
-
-# if balance >= 84000: #day
-#     day_left = balance // 84000
-#     balance //= day_left
-# else:
-#     dayleft = 0
-
-# if balance >= 3600: #hour
-#     hour_left = balance // 3600
-#     balance //= hour_left
-# else:
-#     hour_left = 0
-
-# if balance >= 60: #min
-#     min_left = balance // 60
-#     balance //= min_left
-# else:
-#     min_left = 0
-
-# if balance < 60: #sec
-#     if balance != 0:
-#         sec_left = balance
-#     if balance == 0:
-#         sec_left = 0 
-# else:
-#     sec_left = 0
-
-# print(int(day_left))
-# print(int(hour_left))
-# print(int(min_left))
-# print(int(sec_left))

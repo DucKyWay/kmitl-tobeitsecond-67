@@ -1,12 +1,5 @@
-# ร้าน Fastfood แห่งหนึ่งขาย Hamburger ราคา a บาท เมื่อซื้อครบ b ชิ้น จะได้ฟรี c ชิ้น
-# ซึ่งพี่อยากกินทั้งหมด d ชิ้น พี่ต้องจ่ายเงินน้อยที่สุดกี่บาทถึงจะได้กินเบอร์เกอร์เพียงพอกับที่พี่อยากกิน(เกินได้แต่ห้ามขาด)
-
-# Input Specification
-# 4 บรรทัด ทุกบรรทัดเป็นจำนวนเต็มบวกที่มีค่ามากกว่าหรือเท่ากับ 0
-    # บรรทัดแรก : ค่าของ a
-    # บรรทัดที่สอง : ค่าของ b
-    # บรรทัดที่สาม : ค่าของ c
-    # บรรทัดที่สี่ : ค่าของ d
+# ร้าน Fastfood แห่งหนึ่งขาย Hamburger ราคา a บาท เมื่อซื้อครบ b ชิ้น จะได้ฟรี c ชิ้น อยากกิน d ชิ้น
+#
 # Output Specification
 # 2 บรรทัด
     # บรรทัดที่ 1 : จำนวน Hamburger ที่ได้รับ (ชิ้น)
@@ -16,10 +9,12 @@
 
 def main():
     '''Main Function'''
-    price = int(input())
-    pro = int(input())
-    pro_free = int(input())
-    need = int(input())
+    price = int(input()) # a ราคา
+    pro = int(input()) # b เมื่อซื้อครบ
+    pro_free = int(input()) # c ได้ฟรี
+    want = int(input()) # d อยากกิน
 
-    total_pro = pro + pro_free
+    a_set = pro + pro_free
+    print(set)
+
 main()
