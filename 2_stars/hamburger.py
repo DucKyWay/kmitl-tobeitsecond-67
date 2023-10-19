@@ -16,6 +16,10 @@
 
 def main():
     '''Main Function'''
-    # Write your code here
+    price = int(input())
+    pro = int(input())
+    pro_free = int(input())
+    need = int(input())
 
+    total_pro = pro + pro_free
 main()
