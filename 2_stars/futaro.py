@@ -1,7 +1,7 @@
 def main():
 
     ichika, nino, miku, yotsuba, itsuki, teach, days = int(input()), int(input()), int(input()), int(input()), int(input()), float(input()), int(input())
-    if ichika <= teach and nino <= teach and miku <= teach and yotsuba <= teach and itsuki <= teach:
+    if ichika < teach and nino < teach and miku < teach and yotsuba < teach and itsuki < teach:
 
         ichika_l = ichika * days * 0.6
         nino_l = nino * days * 0.6
