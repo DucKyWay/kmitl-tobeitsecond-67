@@ -1,10 +1,15 @@
-start = int(input())
-finish = int(input())
+def main():
+    start = int(input())
+    finish = int(input())
 
-times = finish = start
+    times = finish - start
+    i = start
 
-for i in range(times):
+    for i in range(times):
+        print(start)
+        start += 1
+        i += 1
     print(start)
-    start += 1
-    i += 1
-print("Yahoo!")
+    print("Yahoo!")
+
+main()
