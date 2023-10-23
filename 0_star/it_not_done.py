@@ -1,5 +1,5 @@
 def main():
     sentence = input()
-    x = sentence.swapcase
-    print(x)
+    for i in range(0, len(sentence)):
+        print(sentence[i])
 main()
