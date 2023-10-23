@@ -1,8 +1,8 @@
 def check_result(score, teach, day):
-    score_l = score * day / 100
-    can_pass = teach / day * 0.6
-    return "Pass" if score_l >= can_pass else "Fail"
-
+    score_l = score / 100 * day
+    can_pass = teach / 100 * day
+    return "Pass" if score_l + can_pass >= 0.6 * can_pass else "Fail"
+    
 def main():
     ichika, nino, miku, yotsuba, itsuki, teach, day = int(input()), int(input()), int(input()), int(input()), int(input()), float(input()), int(input())
 
