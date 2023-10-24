@@ -1,9 +1,13 @@
 count = int(input())
+bookshelf = []
 for i in range(count):
     book_title = str(input())
-
-# คือพี่มีหนังสือเยอะมากๆเลยอยากจะให้น้องๆช่วยจัดหนังสือให้พี่ที :)
-# โดยมีข้อแม้ว่า
-# ถ้าเป็นหนังสือใหม่จะเอาไว้ต่อจากหนังสือเดิมได้เลย
-# ถ้าเป็นหนังสือที่ซ้ำกับที่อยู่บนชั้นวางหนังสือจะนำไว้ต่อจากเล่มเดิมเลย
-# แต่ถ้าหนังสือเล่มเดิมซ้ำเกิน 3 รอบขึ้นไปจะโยนทิ้ง(ไม่เอาขึ้นชั้นวางหนังสือ)
+    count_duplicate = bookshelf.count(book_title)
+    if count_duplicate >= 2:
+        pass
+    elif count_duplicate == 0:
+        bookshelf.append(book_title)
+    else:
+        index = bookshelf.index(book_title)
+        bookshelf.insert(index, book_title)
+print("ชั้นวางหนังสือ", bookshelf)
