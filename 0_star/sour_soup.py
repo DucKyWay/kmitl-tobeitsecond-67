@@ -1,8 +1,13 @@
 def main():
 
+    menu_dic = {
+        "shrimp sour soup": 80,
+        "mixed vegetables sour soup": 60,
+    }
+
     total = 0
     while True:
-        menu = atr(input())
+        menu = str(input())
         if menu == "stop":
             break
         total += num
@@ -30,3 +35,7 @@ main()
 # บรรทัดที่ 1 ราคาเต็ม คือ ราคาเดิมที่ยังไม่หักส่วนลด (จำนวนเต็ม)
 # บรรทัดที่ 2 ส่วนลด คือ ส่วนลดที่หักไป (จำนวนเต็ม)
 # บรรทัดที่ 3 ราคาสุทธิ คือ ราคาเต็มที่หักส่วนลดแล้ว (จำนวนเต็ม)
+
+# Original Price 200 baht
+# Discount 0 baht
+# Total 200 baht
