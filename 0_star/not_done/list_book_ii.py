@@ -1,14 +1,17 @@
-# รอบที่แล้วพี่ให้จัดหนังสือไปแล้วรอบนี้ช่วยพี่นับหนังสือที!
+from collections import Counter
 
-# โดยพี่จะให้รหัสหนังสือน้องไปตามลำดับจนครบ ให้น้องช่วยเรียงหนังสือตามลำดับตัวอักษร (ยึดจากการเรียงข้อมูลในภาษา python จากน้อยไปมาก)
-# แล้วให้น้องๆบอกข้อมูลของหนังสือแต่ละรหัสดังนี้
+book_list = []
 
-# ชื่อหนังสือ + ลำดับแรกของหนังสือนั้นที่พี่ให้ในตอนแรก + จำนวนเล่มของหนังสือนั้น
+while True:
+    book = input()
+    if book.lower() == "end":
+        break
+    book_list.append(book)
 
-# Input Specification
-# n บรรทัด
-# รับค่ารหัสหนังสือจนกว่าจะเจอคำว่า END
+chk_book.sort()
+book_count = Counter(book_list)
+chk_book = list(book_count.keys())
 
-# Output Specification
-# n บรรทัด
-# แต่ละบรรทัดจะมี รหัสหนังสือ ลำดับแรกของหนังสือนั้นที่ป้อนไปในตอนแรก จำนวนของหนังสือเล่มนั้น
+for i, book in enumerate(chk_book, start=1):
+    count = book_count[book]
+    print(book, i, count)
