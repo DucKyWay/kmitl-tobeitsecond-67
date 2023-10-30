@@ -7,8 +7,13 @@ while True:
         break
     book_list.append(book)
     
-original_order = {book: i+1 for i, book in enumerate(book_list)}
+# ตำแหน่งแรงที่โผล่
+original_order = {}
+for i, book in enumerate(book_list):
+    if book not in original_order:
+        original_order[book] = i + 1
 
+# เรียงตาม Original
 book_list_sorted = sorted(book_list)
 book_count = Counter(book_list)
 

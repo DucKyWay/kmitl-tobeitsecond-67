@@ -9,3 +9,11 @@
 
 # Output Specification
 # บรรทัด เป็นข้อความที่เรียงตามความยาวแล้ว จากสั้นสุด ไปยาวสุด บรรทัดละ 1 ข้อความ
+
+words = []
+while True:
+    word = input()
+    if word.lower() == 'end':
+        break
+    words.append(word)
+
