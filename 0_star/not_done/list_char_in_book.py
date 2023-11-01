@@ -10,11 +10,12 @@
 # Output Specification
 # บรรทัด เป็นข้อความที่เรียงตามความยาวแล้ว จากสั้นสุด ไปยาวสุด บรรทัดละ 1 ข้อความ
 
-words = []
+word_list = []
 while True:
     word = input()
     if word.lower() == 'end':
         break
-    words.append(word)
-word_sort = words.sort(reverse=True)
-print(word_sort)
+    word_list.append(word)
+word_list_sorted = sorted(word_list, key=len)
+for i in word_list_sorted:
+    print(i)
