@@ -16,4 +16,5 @@ while True:
     if word.lower() == 'end':
         break
     words.append(word)
-
+word_sort = words.sort(reverse=True)
+print(word_sort)
