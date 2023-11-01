@@ -1,6 +1,5 @@
 # Description
-# เรื่องนี้เกิดขึ้นในเมืองแฟนตาซีใต้น้ำที่ชื่อว่า Bikini Bottom ที่มีร้าน Krusty Krab เป็น ร้าน Fast food ที่มี Mr. Krabs เป็นเจ้าของร้าน มีข้อกำหนดว่า “ลูกค้าแต่ละคนต้องสั่งไม่ต่ำกว่า 1 ชนิด ”โดยทางร้าน Krusty Krab พี่จึงอยากให้น้องๆเขียนโปรแกรมช่วย Squidward ในการส่งเมนูไปให้ Spoudbob เพื่อทำอาหารส่งให้ลูกค้า
-# menu
+# ลูกค้าแต่ละคนต้องสั่งไม่ต่ำกว่า 1 ชนิด 
 
 # Input Specification
 # หลายบรรทัด รับไปเรื่อยๆจนกว่าจะเจอคำว่า "DONE"
@@ -13,3 +12,27 @@
 # Krabby Meal #1
 # DONE
 # Menu: ['Krabby Meal', 'Krabby Patty']
+
+# menu_insert, menu_list = [], []
+# while True:
+#     menu = input()
+#     if menu.lower() == 'done':
+#         break
+#     menu_insert = menu.rsplit(" #")
+#     menu_list.append(menu_insert)
+# menu_list_sorted = sorted(menu_list, key=lambda x: (int(x[1]), x[0]))
+# menu_result = []
+# for i in menu_list_sorted:
+#     menu_result.append(i[0])
+# print(f"Menu: {menu_result}")
+
+menu_insert, menu_list = [], []
+while True:
+    menu = input()
+    if menu.lower() == 'done':
+        break
+    menu_insert = menu.rsplit(" #")
+    menu_list.append(menu_insert)
+menu_list_sorted = sorted(menu_list, key=lambda x: (int(x[1]), x[0]))
+menu_result = [i[0] for i in menu_list_sorted]
+print(f"Menu: {menu_result}")
