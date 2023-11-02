@@ -13,3 +13,15 @@
 # ถ้านั่งข้ามส่วน เช่น พี่นั่งจากสถานีอโศก (E4) ไปสถานีบางจาก (E10) พี่ก็จะโดนค่าโดยสารทั้งหมด 2 ส่วน คือ ส่วนสัมปทานหลัก และ ส่วนของกรุงเทพมหานคร เช่นเดียวกันกับส่วนอื่นๆ
 # N6 "Error"
 # https://www.youtube.com/watch?v=xwq45th06Nw
+
+entrance = input()
+terminal = input()
+
+if "N" in entrance:
+    print("Entrance form North")
+elif "E" in entrance"
+    continue
+elif "W" in entrance:
+    continue
+elif "S" in entrance:
+    continue
