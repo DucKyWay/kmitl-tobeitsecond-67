@@ -18,23 +18,24 @@
 # END
 # 2-->101
 
-my_list = []
-
+num_list = []
 while True:
-    text = input()
-    if text.lower() != "end":
-        found = False
-        for item in my_list:
-            if item[0] == text:
-                item[1] += 1
-                found = True
+    num = input()
+    if num.lower() != "end":
+        check = False
+        for i in num_list:
+            if i[0] == num:
+                i[1] += 1
+                check = True
                 break
-        if not found:
-            my_list.append([text, 1])
+        if not check:
+            num_list.append([num, 1])
     else:
         break
 
-for i in my_list :
-    num = int(i[0]) + i[1]
-    binary = "{0:b}".format(num)
-    print(f'{i[0]}-->{binary}')
+    print(num)
+
+for i in num_list :
+    number = int(i[0]) + i[1]
+    two_b = "{0:b}".format(num)
+    print(f'{i[0]}-->{two_b}')
