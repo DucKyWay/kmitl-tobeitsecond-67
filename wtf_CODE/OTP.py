@@ -10,25 +10,30 @@
 # Valid หาก OTP ถูกต้องตามเงื่อนไข ตามลำดับที่ได้รับเข้ามา
 # Invalid หากไม่ถูกต้อง
 
-def main():
-    while True:
-        otp = int(input())
-        otp_list = [int(i) for i in str(otp)]
+while True:
+    num_input = input()
+    if num_input == '0':
+        break
+    num_list = list(num_input)
+    if len(str(num_input)) == 4:
+        if len(set(str(num_input))) < 4:
+            print("Valid")
+        else:
+            print("Invalid")
 
-        two_pillar = 0
-        # print(otp_list.count(2))
-        if otp == 0:
-            break
-        
-        if len(str(otp)) == 4 or len(str(otp)) == 6 or len(str(otp)) == 8:
-            for i in range(len(str(otp))):
-                for j in range(10):
-                    chk_otp = otp_list.count(j)
-                    if chk_otp > 2:
-                        two_pillar += 1
-            if two_pillar <= 1:
-                print("Valid")
-            else:
-                print("Invalid")
-        two_pillar = 0
-main()
+    elif len(str(num_input)) == 6:
+        is_valid = False
+        for i in range(4, len(str(num_input))):
+            if str(num_input)[i] == str(num_input)[i-4]:
+                if str(num_input).count(str(num_input)[i]) == 2 or str(num_input).count(str(num_input)[i]) == 3:
+                    is_valid = True
+                    break
+        if is_valid:
+            print("Valid")
+        else:
+            print("Invalid")
+
+    elif len(str(num_input)) == 8:
+        print("============================")
+    else:
+        print("Invalid")
