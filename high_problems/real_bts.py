@@ -17,6 +17,8 @@
 entrance = input()
 terminal = input()
 
+N8_E9_W1_S6 = [0, 17, 25, 28, 32, 40, 43, 47]
+
 if "N" in entrance:
     print("Entrance form North")
 elif "E" in entrance"
