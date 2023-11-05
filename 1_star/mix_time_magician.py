@@ -5,20 +5,22 @@
 # หากวันหรือเดือนที่รับเข้ามาไม่อยู่ในเงื่อนไขข้างต้น ตัวอย่างเช่น วันที่ 32 เดือน 1
 # ให้ตอบว่า Invalid Time
 
-def find_day_of_week(day, month):
-    days_of_week = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
-    days_in_month = [0, 31, 14, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
-    if month < 1 or month > 12 or day < 1 or day > days_in_month[month]:
+def calculate_day_of_week(day, month):
+    days_in_week = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+    days_in_month = [31, 14, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+    if month < 1 or month > 12 or day < 1 or day > days_in_month[month - 1]:
         return "Invalid Time"
-    total_days = day - 5
-    for i in range(1, month):
+
+    total_days = day
+    for i in range(month - 1):
         total_days += days_in_month[i]
-    day_of_week = (total_days % 7 + 1) % 7
-    return days_of_week[day_of_week]
+
+    day_of_week_index = total_days % 7
+    day_of_week = days_in_week[day_of_week_index]
+    return day_of_week
 
 def main():
-    day = int(input())
-    month = int(input())
-    result = find_day_of_week(day, month)
+    day, month = int(input()), int(input())
+    result = calculate_day_of_week(day, month)
     print(result)
 main()

@@ -1,17 +1,16 @@
-# Description
-# แย่ละน้องๆพี่เหลือกระสุนอยู่ Mag สุดท้ายละพี่ต้องยิงมันให้ตาย
-# โดยพี่จะบอกจำนวนกระสุนของพี่
-# พลังชีวิตที่เหลือของศัตรู
-# และดาเมจของปืนพี่
-# แต่เพราะพี่ยิงแม่นมากน้องช่วยบอกพี่หน่อยว่าศัตรูจะตายรึป่าว
+bullet = int(input()) # กระสุนที่ยิงออกไปทั้งหมด
+enemy_hp = float(input()) # เลือดของศัตรู
+gun_damage = float(input()) # ความเสียหายของกระสุน 1 นัด
+total_damage, bullet_remain = 0, bullet
 
-# Input Specification
-# 3 บรรทัด :
-# กระสุนของพี่(จำนวนเต็ม)
-# พลังชีวิตที่เหลือของศัตรู(จำนวนจริง)
-# ดาเมจของปืน(จำนวนจริง)
+for i in range(bullet):
+    bullet_remain -= 1
+    total_damage += gun_damage
+    hp_remain = enemy_hp - total_damage
 
-# Output Specification
-# 1 บรรทัด :
-# ถ้าศัตรูรอดแสดง alive : พลังชีวิตที่ยังเหลืออยู่ของศัตรู(จำนวนจริง) health
-# ถ้าศัตรูตายแสดง dead : กระสุนที่เหลืออยู่(จำนวนเต็ม) bullet remain
+    if total_damage >= enemy_hp:
+        print(f"dead : {bullet_remain} bullet remain")
+        break
+    else:
+        print(f"alive : {hp_remain} health")
+        break

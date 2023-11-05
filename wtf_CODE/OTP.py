@@ -15,8 +15,13 @@ while True:
     if num_input == '0':
         break
     num_list = list(num_input)
-    if len(str(num_input)) == 4:
-        if len(set(str(num_input))) < 4:
+    # if len(str(num_input)) == 4:
+    #     if len(set(str(num_input))) < 4:
+    #         print("Valid")
+    #     else:
+    #         print("Invalid")
+    if len(num_list) == 4:
+        if len(set(num_list)) < 4:
             print("Valid")
         else:
             print("Invalid")
