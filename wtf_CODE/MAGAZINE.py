@@ -3,13 +3,12 @@ enemy_hp = float(input())
 gun_damage = float(input()) 
 hp_remain = enemy_hp
 
-for _ in range(bullet):
+for i in range(bullet):
     hp_remain -= gun_damage
     if hp_remain <= 0:
-        result = "dead : " + str(bullet - _ - 1) + " bullet remain"
-        # result = "dead : " + str(bullet - (_ + 1)) + " bullet remain"
+        result = "dead : " + str(bullet - (i + 1)) + " bullet remain"
         break
 else:
     result = "alive : " + str(hp_remain) + " health"
-
 print(result)
+
