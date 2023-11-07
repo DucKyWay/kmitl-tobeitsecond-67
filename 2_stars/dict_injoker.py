@@ -12,7 +12,7 @@
 # สกิลที่ Invoker ปล่อยออกมา ตัวพิมพ์ใหญ่ทั้งหมด หากมีมากกว่าหนึ่งสกิลให้คั่นด้วยเครื่องหมายคอมม่า+ช่องว่าง โดยเรียงตามลำดับสกิลที่ถูกปล่อยออกมาก่อน
 # หาก Invoker ไม่สามารถปล่อยสกิลใดๆออกมาได้เลยให้ตอบว่า EZ MID
 
-skill = {
+skillMarble = {
     "QQQ" : "COLD SNAP",
     "QQW" : "GHOST WALK",
     "QQE" : "ICE WALL",
@@ -24,19 +24,12 @@ skill = {
     "EEW" : "CHAOS METEOR",
     "QWE" : "DEFEANING BLAST"
 }
+skillList = []
+skillInput = input()
 
-skill_list = []
-
-input_skill = input()
-
-# ถ้าเกิดมี R เข้ามา จะต้องมี s ตาม
-
-for i in input_skill :
-    skill_list.append(i)
+for i in skillInput :
+    skillList.append(i)
     if i == 'RS' :
-        skill_list.pop()
-        for i in range(len(skill_list)) :
-            preList = skill_list[len(skill_list) - 1]
-            skill_list.pop()
-            skill_list.swap()
+        skillList.pop()
         break
+combolist = []
