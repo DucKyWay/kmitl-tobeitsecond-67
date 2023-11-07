@@ -5,9 +5,6 @@
 # โดยให้บอกรายชื่อของตัวที่เหลือรอดและรายชื่อของตัวที่ตาย โดยรายชื่อที่ออกมาเรียงกันแล้ว
 # ลองใช้ตัวนี้ในการดึงข้อมูลมาดูนะครับ
 
-# ลองใช้พวก Dict/Dict method มาช่วยในการทำข้อนี้นะครับ
-# https://www.w3schools.com/python/python_dictionaries.asp
-
 # Input Specification
 # หลายบรรทัด
 # ใส่เป็นชื่อระหว่าง Innocent หรือ Duck เข้ามาเรื่อย ๆ จนกว่าจะเจอคำว่า Start
@@ -36,35 +33,21 @@
 # Tusk
 # End
 
-import json
+ducks = {}
 
-duck_list = []
-innocent_list = []
-dead = []
+for i in range(10):
+    player = input()
+    name = "Innocent" if player == "Innocent" else "Duck"
+    ducks[name] = i
 
-while True:
-    line = input()
-    if line == "Start":
-        if line != "End":
-            dead.append(line)
-        else:
-            break
-    
-    data = json.loads(line)
-    name, role = list(data.keys())[0], list(data.values())[0]
-    
-    if role == "Duck":
-        duck_list.append(name)
-    elif role == "Innocent":
-        innocent_list.append(name)
+def is_alive(name):
+    if name in ducks:
+        return ducks[name] == 1
+    else:
+        return False
 
-remaining_ducks = len(duck_list)
-
-print(remaining_ducks, " Ducks Remains")
-print("***Alive***")
-for name in duck_list + innocent_list:
-    print(f"{name} : Innocent" if name in innocent_list else f"{name} : Duck")
-
-print("***Dead***")
-for name in innocent_list + duck_list:
-    print(f"{name} : Innocent" if name in innocent_list else f"{name} : Duck")
+for name in ducks:
+    if is_alive(name):
+        print(f"{name} is alive")
+    else:
+        print(f"{name} is dead")
