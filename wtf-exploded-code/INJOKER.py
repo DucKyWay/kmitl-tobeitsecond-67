@@ -20,7 +20,6 @@ for i in skillInput :
         break
 combolist = []
 
-# ตรวจสอบ input ทุก 3 ตัวและแสดงผลลัพธ์
 for i in range(len(skillList) - 2):
     skill_combo = skillList[i:i+3]
     combo_str = ''.join(skill_combo)
