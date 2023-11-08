@@ -1,4 +1,16 @@
-skillMarble = {
+# Invoker เป็นตัวละครในเกมส์ Dota2 ซึ่งเป็นตัวละครที่มีระดับความยากในการเล่นอันดับต้นๆของเกม เหตุผลก็เพราะ Invoker เป็นจอมเวทย์ผู้ยิ่งใหญ่ที่สามารถจดจำการร่ายมนตร์ต่าง ๆ 
+# และใช้มันได้อย่างชำนาญแต่ดูเหมือนว่าพ่อมด Invoker ผู้ยิ่งใหญ่จะมีอาการหลงๆลืมๆไปตามประสาคนแก่ พ่อมด Invoker เลยอยากให้น้องซึ่งเป็นจอมเวทย์ฝึกหัดเขียนโปรแกรมที่สามารถบอกได้ว่า
+# หากกดตัวอักษรใดๆเข้ามา แล้วพ่อมด Invoker จะสามารถปล่อยสกิลอะไรออกมาได้บ้าง โดยหลักการใช้เวทย์มนต์ของ Invoker มีดังนี้
+# 1.Invoker จะต้องเรียกลูกแก้วแต่ละธาตุให้ขึ้นมาล้อมรอบตัวเองก่อน โดยที่ การกดปุ่ม Q จะได้ลูกแก้วธาตุน้ำ(สีฟ้า) ปุ่ม W จะได้ลูกแก้วธาตุลม(สีชมพู) 
+# และปุ่ม E จะได้ลูกแก้วธาตุไฟ(สีส้ม) Invoker จะมีลูกแก้วล้อมรอบตัวได้สูงสุด 3 ลูกเท่านั้น โดยจะเริ่มต้นที่ไม่มีลูกแก้วใดๆอยู่เลย(0 ลูก) หากลูกแก้วเกิน 3 ก็ให้นำลูกแรกสุดออก ก่อนจะเพิ่มลูกใหม่เข้าไป
+# 2.ต่อมาคือการกดปุ่ม R จะเป็นการเพิ่มสกิลที่ได้จากประเภทของลูกแก้วที่ล้อมรอบตัว Invoker อยู่ในขณะนั้นเข้าไปที่ช่องสกิล S,D 
+# โดยจะเพิ่มเข้าไปที่ช่อง S ก่อนเสมอ หากช่อง S มีสกิลอยู่แล้ว สกิลในช่อง S ก็จะขยับไปอยู่ในช่อง D เป็นอย่างงี้ไปเรื่อยๆ สกิลในช่อง S กับ D 
+# ไม่สามารถเป็นสกิลที่ซ้ำกันได้ หากกดปุ่ม R ในขณะที่ยังมีลูกแก้วไม่ครบ 3 ลูก หรือประเภทของลูกแก้วไม่ตรงกับเวทย์มนต์ใดๆเลย หรือสกิลที่จะเพิ่มเข้ามีอยู่ในช่อง S, D อยู่แล้วก็จะถือว่าไม่มีอะไรเกิดขึ้น
+# 3.การกดปุ่ม S หรือ D จะเป็นการใช้งานสกิลที่อยู่ในช่องนั้นๆ หากในช่องสกิลนั้นยังว่างอยู่(ยังไม่ได้กดปุ่ม R เพื่อเพิ่มสกิล) ก็จะถือว่าไม่มีอะไรเกิดขึ้น โดยในตอนเริ่มต้นจะยังไม่มีสกิลใดๆ
+# น้องๆสามารถดูตารางสกิลได้จากรูปด้านล่างนี้เลย ดูที่ประเภทลูกแก้วเป็นหลักนะครับ
+# ส่วนช่องการกดสกิลสามารถดูได้จากรูปบนสุดที่มีกรอบสี่เหลี่ยมสีแดงล้อมรอบอยู่
+
+skill_key = {
     "QQQ" : "COLD SNAP",
     "QQW" : "GHOST WALK",
     "QQE" : "ICE WALL",
@@ -10,28 +22,28 @@ skillMarble = {
     "EEW" : "CHAOS METEOR",
     "QWE" : "DEFEANING BLAST"
 }
-skillList = []
-skillInput = input()
+skill_list = []
+skill_input = input()
 
-for i in skillInput :
-    skillList.append(i)
-    if i == 'RS' :
-        skillList.pop()
+for i in skill_input :
+    skill_list.append(i)
+    if i == 'R' and i+1 == 'S':
+        skill_list.pop()
         break
-combolist = []
+combo_list = []
 
-for i in range(len(skillList) - 2):
-    skill_combo = skillList[i:i+3]
+for i in range(len(skill_list) - 2):
+    skill_combo = skill_list[i:i+3]
     combo_str = ''.join(skill_combo)
-    if combo_str in skillMarble:
-        combolist.append(skillMarble[combo_str])
-combolist = sorted(combolist , reverse=True)
+    if combo_str in skill_key:
+        combo_list.append(skill_key[combo_str])
+combo_list = sorted(combo_list , reverse=True)
 
-if combolist :
-    for i in range(len(combolist)) :
-        if i >= len(combolist) - 1 :
-            print(combolist[i])
+if combo_list :
+    for i in range(len(combo_list)) :
+        if i >= len(combo_list) - 1 :
+            print(combo_list[i])
         else :
-            print(combolist[i] , end=', ')
+            print(combo_list[i] , end=', ')
 else :
     print("EZ MID")
