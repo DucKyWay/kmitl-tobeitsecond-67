@@ -11,13 +11,13 @@
 # ถ้านั่งข้ามส่วน เช่น E4 - E10 จะโดนค่าโดยสารทั้งหมด 2 ส่วน คือ ส่วนสัมปทานหลัก และ ส่วนของกรุงเทพมหานคร
 # N6 "Error"
 
-BKK_normal = [0, 17, 25, 28, 32, 40, 43, 47]
+BKK_normal = [17, 17, 25, 28, 32, 35, 40, 43, 47]
 BMA_flat_fare = 15
 n_list = [f'N{i}' for i in range(1, 25)]
 e_list = [f'E{i}' for i in range(1, 24)]
 w_list = ['W1']
 s_list = [f'S{i}' for i in range(1, 13)]
-center_lsit = ['CEN']
+center_list = ['CEN']
 station_list = n_list + center_list + e_list + w_list + s_list
 free_n = [f'N{i}' for i in range(9, 25)]
 free_e = [f'E{i}' for i in range(14, 24)]
