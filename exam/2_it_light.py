@@ -8,12 +8,13 @@
 # ส่งออกข้อมูลเป็น : จำนวนหลอดไฟที่เปิดอยู่หลังสับสวิตซ์ครบ n ครั้ง (จำนวนเต็มบวก)
 
 led_stage = ["off", "blue", "orange"]
-stage, save, times = 0, 0, int(input())
+stage, save, times = [], 0, int(input())
 for i in range(1, times + 1):
     for j in range(1, times + 1):
         if i % j == 0:
-            stage = (stage + 1) % 3
-    if led_stage[stage] != "off":
+            stage.append((stage + 1) % 3)
+    # if led_stage[stage] != "off":
+        # save += 1
+    if 0 in stage and 1 in stage and 2 in stage:
         save += 1
-
 print(save)
