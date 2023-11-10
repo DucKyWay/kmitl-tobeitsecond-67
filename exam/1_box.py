@@ -29,7 +29,7 @@
 width, height, star, star_box = int(input()), int(input()), int(input), []
 star_box.append("-" * (width + 2))
 
-star_frac = star % width
+star_row = star % width
 
 star_box.append("-" * (width + 2))
 for i in star_box:
