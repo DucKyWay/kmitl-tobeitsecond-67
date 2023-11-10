@@ -26,7 +26,7 @@
 # ------
 # There are 1 star left.
 
-width, height, star, star_box = int(input()), int(input()), int(input()), []
+width, height, star, star_box = int(input()), int(input()), int(input), []
 star_box.append("-" * (width + 2))
 
 star_frac = star % width
